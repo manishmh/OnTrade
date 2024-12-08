@@ -6,19 +6,13 @@ Our project addresses a crucial gap in the current landscape of real-world asset
 
 By utilizing Gelato functions, our platform executes stock purchases off-chain, ensuring that the tokens you hold are genuinely backed by real-world assets. This enhances trust, transparency, and the overall value proposition of RWAs on-chain, effectively bridging the gap between traditional finance and blockchain technology.
 
-#### Currently Deployed on Lisk Sepolia and Supports the Following Stocks:
-- [AAPL](https://sepolia-blockscout.lisk.com/address/0x06e692951f08031423344228FF52b7544248b188)
-- [AMZN](https://sepolia-blockscout.lisk.com/address/0x1E30638373f2d76cA5AC17e58f08f03A6C1E9744)
-- [NASDAQ](https://sepolia-blockscout.lisk.com/address/0xA870c6739fC08dF98E2cB9F587a42C9347B83509)
-- [S&P500](https://sepolia-blockscout.lisk.com/address/0xc74E6d979CE9004FF8D92f6F0ea0654dF2E52e42)
-
 #### The flow of the Dapp is as follows:-
 - Approve and deposit the suffcient amount of USDT to the contract.
 - Select the stock and the correct amount.
 - Redstone's core price feed wraps the transaction with its oracle data.
 - After calling the `buyRStock` function, a `BuyRequest` gets emmitted.
 - The event is picked up by Gelato's web3-function, which calls the Alpaca API to buy the respective stock in the exchange.
-- It then excutes the `mintRStock` function, which mints the directly backed ERC20 of the RWA on-chain.
+- It then excutes the `mintRStock` function, which miCncf nts the directly backed ERC20 of the RWA on-chain.
 - In a similar manner, it can be sold and the USDT can be withdrawn. 
 
 This repository includes the contract and Web3 functions, which need to be deployed separately for testing.
@@ -47,9 +41,6 @@ $ npm run dev
 ### Environment Variables:
 Environment variables are needed for Web3 functions as they use the [Alpaca API](https://app.alpaca.markets/signup) for stock trading.
 
-#### USDT Contract:
-The [USDT contract](https://sepolia-blockscout.lisk.com/address/0x2728DD8B45B788e26d12B13Db5A244e5403e7eda) used in the prototype is the most utilized USDT contract on Lisk Sepolia, deployed by HUOSTATER. Obtain USDT from the [faucet](https://lisk-sepolia.huostarter.io/).
-
 #### Gelato Deployed Functions:
 - [MarketAAPL](https://app.gelato.network/functions/task/0x3a67e17be48fffd59fd9e7b4dbdfab276b2d331700ca2e95772621811a731ada:4202)
 - [BuyAAPL](https://app.gelato.network/functions/task/0x7d770f030f5af725dc544634207c9af76a44403404d659f0cc73c0c286f6f39b:4202)
@@ -68,6 +59,5 @@ The [USDT contract](https://sepolia-blockscout.lisk.com/address/0x2728DD8B45B788
 - **Buy Function**: Listens for `BuyRequest` events, interacts with the Alpaca API to purchase stock, and mints the corresponding ERC20 token to the trader.
 - **Sell Function**: Listens for `SellRequest` events, interacts with the Alpaca API to sell stock, and burns the corresponding ERC20 token from the trader.
 
-### [Demo Video](https://youtu.be/v3Bq-6OxTW8)
 
-## Built during [ETHSEA](https://www.ethsea.com/)
+## Built during [ETHINDIA 2024](https://ethindia2024.devfolio.co/)

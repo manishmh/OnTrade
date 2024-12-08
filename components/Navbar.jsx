@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="flex justify-between items-center w-[89vw] max-w-screen-lg mx-auto fixed z-[6] backdrop-blur-sm">
       <a href="#" className="flex justify-start items-center flex-shrink-0 cursor-pointer ">
         <Image src='logo.svg' alt='logo' width={90} height={90} />
-        <h1 className="font-normal font-poppins text-[24px] text-white leading-loose">RealTrade</h1>
+        <h1 className="font-normal font-poppins text-[24px] text-white leading-loose">OnTrade</h1>
       </a>
       <div>
         <ul className="hidden sm:flex items-center">
